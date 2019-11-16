@@ -49,23 +49,23 @@ option(USE_PTHREADS "Use Pthreads" ON)
 
 option(USE_V4_ALTIVEC "Enable V4 Altivec" OFF)
 
-option(USE_V4_PORTABLE "Enable V4 Portable" OFF)
+option(USE_V4_PORTABLE "Enable V4 Portable" ON)
 
 option(USE_V4_SSE "Enable V4 SSE" OFF)
 
-option(USE_V4_AVX "Enable V4 AVX" OFF)
+option(USE_V4_AVX "Enable V4 AVX" ON)
 
-option(USE_V4_AVX2 "Enable V4 AVX2" OFF)
+option(USE_V4_AVX2 "Enable V4 AVX2" ON)
 
-option(USE_V8_PORTABLE "Enable V8 Portable" OFF)
+option(USE_V8_PORTABLE "Enable V8 Portable" ON)
 
-option(USE_V8_AVX "Enable V8 AVX" OFF)
+option(USE_V8_AVX "Enable V8 AVX" ON)
 
-option(USE_V8_AVX2 "Enable V8 AVX2" OFF)
+option(USE_V8_AVX2 "Enable V8 AVX2" ON)
 
-option(USE_V16_PORTABLE "Enable V16 Portable" OFF)
+option(USE_V16_PORTABLE "Enable V16 Portable" ON)
 
-option(USE_V16_AVX512 "Enable V16 AVX512" OFF)
+option(USE_V16_AVX512 "Enable V16 AVX512" ON)
 
 option(USE_LEGACY_SORT "Enable Legacy Sort Implementation" OFF)
 
