@@ -241,7 +241,7 @@ endif(USE_V16_PORTABLE)
 
 if(USE_V16_AVX512)
   add_definitions(-DUSE_V16_AVX512)
-  set(VPIC_CXX_FLAGS "${VPIC_CXX_FLAGS} -DUSE_V16_AVX512 -mavx")
+  set(VPIC_CXX_FLAGS "${VPIC_CXX_FLAGS} -DUSE_V16_AVX512 -march=skylakex-avx512")
   set(USE_V16 True)
 endif(USE_V16_AVX512)
 

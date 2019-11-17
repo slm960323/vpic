@@ -253,15 +253,9 @@ typedef struct collective collective_t;
 // ATOMIC WHEN MULTIPLE RANKS USE SIMULTANEOUSLY
 
 #define MESSAGE(args) do {                      \
-    log_printf( _LOG_HDR "[%i]: ", world_rank ); \
-    log_printf args;                            \
-    log_printf( "\n" );                         \
   } while(0)
 
 #define WARNING(args) do {                                      \
-    log_printf( "Warning at " _LOG_HDR "[%i]:\n\t", world_rank ); \
-    log_printf args;                                            \
-    log_printf( "\n" );                                         \
   } while(0)
 
 #define ERROR(args) do {                                      \
