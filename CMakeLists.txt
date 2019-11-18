@@ -57,7 +57,7 @@ option(USE_V4_AVX "Enable V4 AVX" ON)
 
 option(USE_V4_AVX2 "Enable V4 AVX2" ON)
 
-option(USE_V8_PORTABLE "Enable V8 Portable" ON)
+option(USE_V8_PORTABLE "Enable V8 Portable" OFF)
 
 option(USE_V8_AVX "Enable V8 AVX" ON)
 
@@ -187,7 +187,7 @@ endif(USE_V4_SSE)
 
 if(USE_V4_AVX)
   add_definitions(-DUSE_V4_AVX)
-  set(VPIC_CXX_FLAGS "${VPIC_CXX_FLAGS} -DUSE_V4_AVX")
+  set(VPIC_CXX_FLAGS "${VPIC_CXX_FLAGS} -DUSE_V4_AVX -march=native -mtune=broadwell")
   set(USE_V4 True)
 endif(USE_V4_AVX)
 
@@ -223,7 +223,7 @@ endif(USE_V8_AVX)
 
 if(USE_V8_AVX2)
   add_definitions(-DUSE_V8_AVX2)
-  set(VPIC_CXX_FLAGS "${VPIC_CXX_FLAGS} -DUSE_V8_AVX2")
+  set(VPIC_CXX_FLAGS "${VPIC_CXX_FLAGS} -DUSE_V8_AVX2 -mavx -msse4.1")
   set(USE_V8 True)
 endif(USE_V8_AVX2)
 
@@ -241,7 +241,7 @@ endif(USE_V16_PORTABLE)
 
 if(USE_V16_AVX512)
   add_definitions(-DUSE_V16_AVX512)
-  set(VPIC_CXX_FLAGS "${VPIC_CXX_FLAGS} -DUSE_V16_AVX512 -march=skylakex-avx512")
+  set(VPIC_CXX_FLAGS "${VPIC_CXX_FLAGS} -DUSE_V16_AVX512")
   set(USE_V16 True)
 endif(USE_V16_AVX512)
 
