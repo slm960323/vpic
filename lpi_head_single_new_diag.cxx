@@ -831,7 +831,7 @@ begin_initialization {
   double vacuum_wavelength = 527 * 1e-7;   // third micron light (cm)
   float  laser_intensity  = 2.5e15; // Units of W/cm^2
 
-  float box_size_x = 120 * 1e-4;   // Microns
+  float box_size_x = 20 * 1e-4;   // Microns
   float box_size_z = 12.0 *  1e-4;   // Microns (ignored if 1d or 2d in plane)
 
   int mobile_ions         = 1;        // Whether or not to push ions 
@@ -861,7 +861,7 @@ begin_initialization {
   double debye = uthe*delta;
   double wpe1ps=1e-12* speed_of_light/delta;
 
-  double nx                = 7776;
+  double nx                = 1296;
   double ny                = 1;   // 2D problem in x-z plane
   double nz                = 550;  // was 549;
 
@@ -884,9 +884,9 @@ begin_initialization {
 
   double dt = cfl_req*courant_length(Lx, Ly, Lz, nx, ny, nz); 
 
-  double topology_x = 70; // 54 cells per MPI
+  double topology_x = 36; // 54 cells per MPI
   double topology_y = 1;
-  double topology_z = 5;
+  double topology_z = 10;
 
 // laser focusing parameters
   int  launch_laser = 1;        // Whether to launch pump laser
@@ -1561,7 +1561,7 @@ begin_diagnostics {
 
 //#include "time_average_v3_He.cxx"
 
-#if 1
+#if 0
   // Field and hydro data
 
   if ( should_dump(field) ) {
