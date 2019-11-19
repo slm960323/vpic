@@ -884,9 +884,9 @@ begin_initialization {
 
   double dt = cfl_req*courant_length(Lx, Ly, Lz, nx, ny, nz); 
 
-  double topology_x = 144; // 54 cells per MPI
+  double topology_x = 70; // 54 cells per MPI
   double topology_y = 1;
-  double topology_z = 10;
+  double topology_z = 5;
 
 // laser focusing parameters
   int  launch_laser = 1;        // Whether to launch pump laser
@@ -928,7 +928,7 @@ begin_initialization {
   int ele_sort_freq       = 20*2; 
   int ion_sort_freq       = 5*ele_sort_freq; 
 
-  double quota = 11.7;            // Run quota in hours.  
+  double quota = 48;            // Run quota in hours.  
   double quota_sec = quota*3600;  // Run quota in seconds. 
 
   double Ne    = nppc*nx*ny*nz;             // Number of macro electrons in box
