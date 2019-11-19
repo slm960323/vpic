@@ -181,13 +181,13 @@ endif(USE_V4_PORTABLE)
 
 if(USE_V4_SSE)
   add_definitions(-DUSE_V4_SSE)
-  set(VPIC_CXX_FLAGS "${VPIC_CXX_FLAGS} -DUSE_V4_SSE")
+  set(VPIC_CXX_FLAGS "${VPIC_CXX_FLAGS} -DUSE_V4_SSE -msse4.2")
   set(USE_V4 True)
 endif(USE_V4_SSE)
 
 if(USE_V4_AVX)
   add_definitions(-DUSE_V4_AVX)
-  set(VPIC_CXX_FLAGS "${VPIC_CXX_FLAGS} -DUSE_V4_AVX -march=native -mtune=broadwell")
+  set(VPIC_CXX_FLAGS "${VPIC_CXX_FLAGS} -DUSE_V4_AVX -mavx512f -mavx512dq -march=skylake-avx512 -mtune=skylake-avx512")
   set(USE_V4 True)
 endif(USE_V4_AVX)
 
@@ -223,7 +223,7 @@ endif(USE_V8_AVX)
 
 if(USE_V8_AVX2)
   add_definitions(-DUSE_V8_AVX2)
-  set(VPIC_CXX_FLAGS "${VPIC_CXX_FLAGS} -DUSE_V8_AVX2 -mavx -msse4.1")
+  set(VPIC_CXX_FLAGS "${VPIC_CXX_FLAGS} -DUSE_V8_AVX2")
   set(USE_V8 True)
 endif(USE_V8_AVX2)
 
