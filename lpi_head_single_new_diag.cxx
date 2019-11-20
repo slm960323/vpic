@@ -912,14 +912,14 @@ begin_initialization {
 
 // intervals 
   float t_stop = 100*wpe1ps;     // Runtime in 1/omega_pe
-  int poynting_interval    = int(M_PI/(dt*(omega_0+1.5)));       // Num. steps between dumping poynting flux to resolve w/wpe=8
+  int poynting_interval    = (int(M_PI/(dt*(omega_0+1.5))) * 4);       // Num. steps between dumping poynting flux to resolve w/wpe=8
   int fft_ex_interval     = poynting_interval ;       // Num steps between writing Ex in fft_slice
   int fft_ey_interval     = poynting_interval ;       // Num steps between writing Ey in fft_slice
   int fft_ez_interval     = poynting_interval ;       // Num steps between writing Ez in fft_slice
   int field_interval       = int(0.1*wpe1ps/dt);         // Num. steps between saving field, hydro data
   int energies_interval = field_interval;
 // restart_interval has to be multiples of field_interval
-  int restart_interval       = 10*field_interval;
+  int restart_interval       = 2428040;
 //restart_interval     = 0;  //DEBUG      // Num. steps between restart dumps
 
   int quota_check_interval = 20;
@@ -1561,10 +1561,10 @@ begin_diagnostics {
 
 //#include "time_average_v3_He.cxx"
 
-#if 0
+#if 1
   // Field and hydro data
 
-  if ( should_dump(field) ) {
+  if (step()%20000==0 && should_dump(field) ) {
     field_dump( global->fdParams );
 //  dump_fields( "field/fields", (int)step );
 
